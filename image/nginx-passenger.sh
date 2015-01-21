@@ -16,6 +16,7 @@ cp /build/config/nginx_main_d_default.conf /etc/nginx/main.d/default.conf
 cp /build/config/mysql-env.conf /etc/nginx/main.d/mysql-env.conf
 cp /build/config/redis-env.conf /etc/nginx/main.d/redis-env.conf
 cp /build/config/elasticsearch-env.conf /etc/nginx/main.d/elasticsearch-env.conf
+cp /build/config/rails-env.conf /etc/nginx/main.d/rails-env.conf
 
 ## Install Nginx runit service.
 mkdir /etc/service/nginx
