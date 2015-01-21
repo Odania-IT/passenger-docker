@@ -6,4 +6,4 @@ RUN mkdir /build
 ADD . /build
 RUN /build/install.sh
 CMD ["/sbin/my_init"]
-EXPOSE 80
+EXPOSE $EXPOSE_PORT
