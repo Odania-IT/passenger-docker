@@ -18,7 +18,7 @@ set -x
 
 # Copy startscript
 mkdir -p /etc/my_init.d
-cp /build/my_init.d/select_type.sh /etc/my_init.d/select_type.sh
+cp /build/my_init.d/select_type.sh /etc/my_init.d/01-select_type.sh
 
 # Disable ssh
 touch /etc/service/sshd/down
