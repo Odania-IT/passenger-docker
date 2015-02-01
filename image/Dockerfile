@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.15
+FROM phusion/baseimage:latest
 MAINTAINER Mike Petersen <mike@odania-it.de>
 
 ENV HOME /root
