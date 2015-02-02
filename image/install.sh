@@ -3,6 +3,9 @@ set -e
 source /build/buildconfig
 set -x
 
+# Workaround for hash sum mismatch http://forum.siduction.org/index.php?topic=4294.0
+rm -rf /var/lib/apt/lists
+
 /build/enable_repos.sh
 /build/prepare.sh
 #/build/pups.sh
