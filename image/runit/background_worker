@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+cd /home/app/webapp
+exec bundle exec sidekiq -e $RAILS_ENV
