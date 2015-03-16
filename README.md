@@ -10,10 +10,25 @@ In order to use this image you need to set these environment variables:
 ```
 RAILS_ENV
 EXPOSE_PORT
+PROCESS_TYPE
 ```
 
 The RAILS_ENV is set as rails environment in the app. The EXPOSE_PORT is the port the container exposes the http server on. Due to the usage of docker-register/docker-discover each app needs to be on a separate port.
 All apps exposing the same port will be mapped as additional server for the same app. 
+
+The PROCESS_TYPE environment variable can be set to "web" or "background_worker". If it is set to web passenger will be started and serve the app. If set to background_worker it will start a background processing service.
+Per default it will start sidekiq as a background worker. If you want to use another service put a file with a content like:
+```
+#!/bin/bash
+set -e
+cd /home/app/webapp
+exec bundle exec sidekiq -e $RAILS_ENV
+```
+This file needs to put to the folder: /etc/service/background_worker/run.
+In a Dockerfile you can use
+```
+ADD my_own_background_worker.sh /etc/service/background_worker/run
+```
 
 For a rails app you can create a Dockerfile with this content:
 ```
