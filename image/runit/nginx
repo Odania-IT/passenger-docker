@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
-sed -e "s/RAILS_ENV/$RAILS_ENV/g" -e "s/EXPOSE_PORT/$EXPOSE_PORT/g" /etc/nginx/webapp.conf.orig > /etc/nginx/sites-enabled/webapp.conf
+
+if [ "$RAILS_ENV" == "development" ]; then
+	sed -e "s/RAILS_ENV/$RAILS_ENV/g" -e "s/EXPOSE_PORT/$EXPOSE_PORT/g" /etc/nginx/webapp.conf.orig > /etc/nginx/sites-enabled/webapp.conf
+else
+	sed -e "s/RAILS_ENV/$RAILS_ENV/g" -e "s/EXPOSE_PORT/$EXPOSE_PORT/g" /etc/nginx/webapp-prod.conf.orig > /etc/nginx/sites-enabled/webapp.conf
+fi
+
 if [[ ! -e /var/log/nginx/error.log ]]; then
 	# The Nginx log forwarder might be sleeping and waiting
 	# until the error log becomes available. We restart it in

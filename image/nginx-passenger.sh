@@ -12,6 +12,7 @@ else
 fi
 cp /build/config/nginx.conf /etc/nginx/nginx.conf
 cp /build/config/webapp.conf /etc/nginx/webapp.conf.orig
+cp /build/config/webapp-prod.conf /etc/nginx/webapp-prod.conf.orig
 mkdir -p /etc/nginx/main.d
 cp /build/config/nginx_main_d_default.conf /etc/nginx/main.d/default.conf
 cp /build/config/mysql-env.conf /etc/nginx/main.d/mysql-env.conf
