@@ -1,6 +1,6 @@
 # passenger-docker
 
-Docker base image for Ruby on Rails applications. It uses Ruby 2.1.
+Docker base image for Ruby on Rails applications.
 
 I am using https://github.com/jwilder/docker-register so only one port is allowed to be exported. Only port EXPOSE_PORT (e.g. 80) is exposed if additionally ssl is needed the proxy (e.g. nginx) has to handle the ssl part.
 

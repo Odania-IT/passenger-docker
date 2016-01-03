@@ -3,9 +3,6 @@ set -e
 source /build/buildconfig
 set -x
 
-## Brightbox Ruby 1.9.3, 2.0 and 2.1
-echo deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu trusty main > /etc/apt/sources.list.d/brightbox.list
-
 ## Phusion Passenger
 if [[ "$PASSENGER_ENTERPRISE" ]]; then
 	echo deb https://download:$PASSENGER_ENTERPRISE_DOWNLOAD_TOKEN@www.phusionpassenger.com/enterprise_apt trusty main > /etc/apt/sources.list.d/passenger.list
@@ -26,7 +23,6 @@ echo deb http://ppa.launchpad.net/rwky/redis/ubuntu trusty main > /etc/apt/sourc
 # Chris Lea's Node.js PPA
 # Rowan's Redis PPA
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys \
-C3173AA6 \
 561F9B9CAC40B2F7 \
 C7917B12 \
 5862E31D
