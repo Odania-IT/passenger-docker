@@ -6,9 +6,9 @@ set -x
 
 ## Install Phusion Passenger.
 if [[ "$PASSENGER_ENTERPRISE" ]]; then
-	apt-get install -y nginx-extras passenger-enterprise
+	apt-get install -y nginx-common passenger-enterprise
 else
-	apt-get install -y nginx-extras passenger
+	apt-get install -y nginx-common passenger
 fi
 cp /build/config/nginx.conf /etc/nginx/nginx.conf
 cp /build/config/webapp.conf /etc/nginx/webapp.conf.orig

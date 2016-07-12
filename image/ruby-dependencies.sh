@@ -19,7 +19,7 @@ minimal_apt_get_install libsqlite3-dev
 ## For postgres and pg.
 minimal_apt_get_install libpq-dev
 ## For capybara-webkit.
-minimal_apt_get_install libqt4-webkit libqt4-dev
+minimal_apt_get_install libqt4-dev libqtwebkit-dev
 ## For curb.
 minimal_apt_get_install libcurl4-openssl-dev
 ## For all kinds of stuff.
